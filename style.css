@@ -1,0 +1,242 @@
+*{
+    border: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+    --title-primary: #202024;
+    --text-primary: #121214 ;
+    --brand-primary: #387E96;
+
+    --text-sm: 1.2rem;
+    --text-base: 1.6rem;
+}
+
+html,
+input{
+    
+    font-weight: 400;
+    line-height: 160%;
+    font-family:'Mulish', sans-serif;
+    color: var(--text-primary);
+}
+
+h1, h2{
+    font-size: 2.4rem;
+    color: var(--title-primary);
+}
+
+h3{
+    font-size: 1.8rem;
+    line-height: 100%;
+    color: var(--title-primary);
+}
+
+img{
+    width: 100%;
+    height: auto;
+    transition: all .3s;
+}
+
+img:hover{
+    scale: 1.02;
+}
+
+
+
+.text-sm{
+    font-size: var(--text-sm);
+}
+
+.container{
+    padding-inline: 2rem;
+    max-width: calc(38rem + (2rem * 2));
+    margin-inline: auto;
+}
+
+header{
+    background-color: var(--brand-primary);
+    padding: 1.2rem 2.8rem;
+}
+
+header .container{
+    display: flex;
+    gap: 2.6rem;
+    align-items: center;
+    justify-content: center;
+}
+
+header a{
+    line-height: 0;
+}
+
+header img:last-child{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+header form input{
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1.2rem 1.4rem;
+    border-radius: 0.4rem;
+
+    font-weight: 600;
+    line-height: 100%;
+    color: #fff;
+}
+
+header form input::placeholder{
+    color: #fff;
+}
+
+main{
+    padding-inline: 2rem;
+    max-width: 38rem;
+    margin-inline: auto;
+}
+
+main h1{
+    margin-top: 1.6rem;
+}
+
+main .buttons{
+    margin-top: 0.8rem;
+}
+
+main p{
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+}
+
+button{
+    all: unset;
+    transition: all 0.3s;
+}
+
+button:hover{
+    transform: scale(1.1) rotate(10deg);
+}
+
+aside{
+
+
+    margin-top: 2rem;
+}
+
+aside section{
+    margin-top: 1.6rem;
+    display: grid;
+    gap: 3.2rem;
+}
+
+aside article{
+    margin-top: 1.6rem;
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    gap: 1.6rem;
+}
+
+section article p{
+    margin-top: 1.2rem;
+}
+
+article img{
+    border-radius: 5px;
+}
+
+footer{
+    background-color: var(--brand-primary);
+    color: #fff;
+    text-align: center;
+    padding-block: 2.4rem;
+
+    margin-top: 4rem;
+}
+
+@media (width > 76.8rem){
+    img{
+        border-radius: 5px;
+    }
+
+    #app{
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "main aside"
+        "footer footer";
+
+        gap: 4rem 3.2rem;
+    }
+
+    header .container,
+    .container{
+        max-width: initial;
+        padding: initial;
+        margin-inline: initial;
+    }
+
+    header{
+        grid-area: header;
+    }
+
+    header .container{
+        max-width: 120rem;
+        margin-inline: auto;
+    }
+
+    header form{
+        flex: 1;
+    }
+
+    header form input{
+        width: 100%;
+    }
+
+    main{
+        grid-area: main;
+    }
+
+    main.container{
+        max-width: 80rem;
+        margin-left: auto;
+    }
+
+    aside{
+        grid-area: aside;
+    }
+
+    aside.container{
+        max-width: 34rem;
+    }
+
+    footer{
+        grid-area: footer;
+    }
+}
+
+header{
+    animation: fromTop .8s .2s backwards;
+}
+
+main, aside{
+    animation: fromBotton .6s .1s backwards
+}
+
+@keyframes fromTop{
+    from{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes fromBotton{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
